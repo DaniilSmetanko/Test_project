@@ -1,0 +1,4211 @@
+{
+	"info": {
+		"_postman_id": "17133b76-0f52-4bb4-8b38-28a64781074e",
+		"name": "Vetmanager Collection",
+		"description": "[Полная документация к Vetmanager API](https://help.vetmanager.cloud/article/3029)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30806716",
+		"_collection_link": "https://www.postman.com/vetmanager/vetmanager-api/collection/x5iqwq5/vetmanager-collection?action=share&source=collection_link&creator=30806716"
+	},
+	"item": [
+		{
+			"name": "Admission",
+			"item": [
+				{
+					"name": "Get All Admissions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/admission",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"admission"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{'property':'client_id', 'value':'14'}]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Admissions Filtered By Client & Status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/admission?filter=[{'property':'client_id', 'value':'{{ID}}'},{'property':'status', 'value':'deleted', 'operator':'!='}]",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"admission"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{'property':'client_id', 'value':'{{ID}}'},{'property':'status', 'value':'deleted', 'operator':'!='}]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get AdmissionsJournal Filtered By Action",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/admission?filter=[{'property':'client_id', 'value':'{{ID}}'},{'property':'status', 'value':'deleted', 'operator':'!='}]",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"admission"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{'property':'client_id', 'value':'{{ID}}'},{'property':'status', 'value':'deleted', 'operator':'!='}]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Admissions Filtered By Pet & Status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/admission?filter=[{'property':'client_id', 'value':'{{ID}}'},{'property':'status', 'value':'deleted', 'operator':'!='}]",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"admission"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{'property':'client_id', 'value':'{{ID}}'},{'property':'status', 'value':'deleted', 'operator':'!='}]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Admission By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/admission/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"admission",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get AdmissionJournal By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/admission/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"admission",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Admission",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"admission_date\": \"2022-12-07 12:00:00\", \"user_id\": \"1\", \"client_id\": \"1\", \"clinic_id\": \"1\", \"admission_length\": \"00:15:00\"}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/admission/",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"admission",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Admission",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"admission_date\": \"2024-04-04 18:00:00\",\r\n    \"user_id\": \"1\",\r\n    \"client_id\": \"937\",\r\n    \"clinic_id\": \"1\",\r\n    \"admission_length\": \"00:15:00\",\r\n    \"start\": \"2024-04-04 18:00:00\",\r\n    \"end\": \"2024-04-04 18:30:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/admission/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"admission",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Breed",
+			"item": [
+				{
+					"name": "Get All Breeds",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/breed",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"breed"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{'property':'client_id', 'value':'14'}]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Breeds Filtered By Pet Type",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/breed?filter=[{'property':'pet_type_id', 'value':'2'}]",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"breed"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{'property':'pet_type_id', 'value':'2'}]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Breed By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/breed/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"breed",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Calendar",
+			"item": [
+				{
+					"name": "Get All TimeSheets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/timesheet/",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"timesheet",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAdmissionToId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/admission/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"admission",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllAdmission",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/admission/",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"admission",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteAdmission",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/admission/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"admission",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TimeSheets ById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/timesheet/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"timesheet",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cassa",
+			"item": [
+				{
+					"name": "Cassa",
+					"item": [
+						{
+							"name": "Get Cassa By ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-REST-API-KEY",
+										"value": "{{API Key}}"
+									}
+								],
+								"url": {
+									"raw": "{{Domain URL}}/rest/api/cassa/{{ID}}",
+									"host": [
+										"{{Domain URL}}"
+									],
+									"path": [
+										"rest",
+										"api",
+										"cassa",
+										"{{ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Cassa All",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-REST-API-KEY",
+										"value": "{{API Key}}"
+									}
+								],
+								"url": {
+									"raw": "{{Domain URL}}/rest/api/cassa",
+									"host": [
+										"{{Domain URL}}"
+									],
+									"path": [
+										"rest",
+										"api",
+										"cassa"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cassa Close",
+					"item": [
+						{
+							"name": "Get Cassa Close By ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-REST-API-KEY",
+										"value": "{{API Key}}"
+									}
+								],
+								"url": {
+									"raw": "{{Domain URL}}/rest/api/cassaclose/{{ID}}",
+									"host": [
+										"{{Domain URL}}"
+									],
+									"path": [
+										"rest",
+										"api",
+										"cassaclose",
+										"{{ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Cassa Close All",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-REST-API-KEY",
+										"value": "{{API Key}}"
+									}
+								],
+								"url": {
+									"raw": "{{Domain URL}}/rest/api/cassaclose",
+									"host": [
+										"{{Domain URL}}"
+									],
+									"path": [
+										"rest",
+										"api",
+										"cassaclose"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cassa Rasshod",
+					"item": [
+						{
+							"name": "Get Cassa Rashod By ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-REST-API-KEY",
+										"value": "{{API Key}}"
+									}
+								],
+								"url": {
+									"raw": "{{Domain URL}}/rest/api/cassarashod/{{ID}}",
+									"host": [
+										"{{Domain URL}}"
+									],
+									"path": [
+										"rest",
+										"api",
+										"cassarashod",
+										"{{ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Cassa Rashod All",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-REST-API-KEY",
+										"value": "{{API Key}}"
+									}
+								],
+								"url": {
+									"raw": "{{Domain URL}}/rest/api/cassarashod",
+									"host": [
+										"{{Domain URL}}"
+									],
+									"path": [
+										"rest",
+										"api",
+										"cassarashod"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Get Client By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/client/116468",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"client",
+								"116468"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Clients",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/client",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"first_name\": \"Alex\", \"last_name\":\"Solt\"}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/client/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"client",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Client editing",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"last_name\": \"Иванов\",\r\n    \"first_name\": \"Иван\",\r\n    \"middle_name\": \"Иванович\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/client/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"client",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/client/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"client",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AnonymousClient",
+			"item": [
+				{
+					"name": "Get Client By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/anonymousClient/116468",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"anonymousClient",
+								"116468"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Clients",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/anonymousClient",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"anonymousClient"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "City",
+			"item": [
+				{
+					"name": "Get City By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/city/255",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"city",
+								"255"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Cities",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/city",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"city"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post City",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\": \"Test\", \"type_id\":\"1\"}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/city",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"city"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "City editing",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"first_name\": \"�������\", \"last_name\":\"������\", \"status\":\"ACTIVE\"}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/city/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"city",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/city/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"city",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CityType",
+			"item": [
+				{
+					"name": "Get CityType By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/cityType/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"cityType",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All CityTypes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/cityType",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"cityType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post CityType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"first_name\": \"Alex\", \"last_name\":\"Solt\"}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/cityType",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"cityType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CityType Editing",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"first_name\": \"�������\", \"last_name\":\"������\", \"status\":\"ACTIVE\"}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/cityType/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"cityType",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/cityType/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"cityType",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clinic",
+			"item": [
+				{
+					"name": "Get All Clinics",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/clinics/",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"clinics",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Clinic By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/clinics/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"clinics",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Combo Manual Item",
+			"item": [
+				{
+					"name": "Get Combo Manual Items",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/ComboManualItem",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"ComboManualItem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Combo Manual Item By Filtered by combo_manual_id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/ComboManualItem?filter=[{'property':'combo_manual_id', 'value':'1'}]",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"ComboManualItem"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{'property':'combo_manual_id', 'value':'1'}]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Combo Manual Item By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/ComboManualItem/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"ComboManualItem",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Combo Manual Item",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\": \"�����������(UPD.REST)\"}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/ComboManualItem/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"ComboManualItem",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Combo Manual Item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\": \"�����������(POST.REST)\", \"combo_manual_id\": \"1\"}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/ComboManualItem",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"ComboManualItem"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Combo Manual Name",
+			"item": [
+				{
+					"name": "Get Combo Manual Names",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/ComboManualName/",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"ComboManualName",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Combo Manual Name By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/ComboManualName/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"ComboManualName",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Combo Manual Name Filtered By Name",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/ComboManualName?filter=[{'property':'name', 'value':'services_for_hooks'}]",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"ComboManualName"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{'property':'name', 'value':'services_for_hooks'}]"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Good",
+			"item": [
+				{
+					"name": "Good Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/good/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"good",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Good Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/good",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"good"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Good Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \n            \"title\": \"Test88\"\n            \n    \n}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/good",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"good"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Good Put",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"Test28\"}\n"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/good/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"good",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Good Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \n            \"title\": \"Test88\"\n            \n    \n}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/good/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"good",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GoodGroup",
+			"item": [
+				{
+					"name": "GoodGroup Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/goodGroup/9",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"goodGroup",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GoodGroup Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/GoodGroup",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"GoodGroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete group",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \n            \"title\": \"Test87\"\n            \n    \n}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/GoodGroup/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"GoodGroup",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put group",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \n            \"title\": \"Test87\"\n            \n    \n}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/GoodGroup/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"GoodGroup",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \n            \"title\": \"Test88\"\n            \n    \n}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/GoodGroup",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"GoodGroup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Good Parties in Store",
+			"item": [
+				{
+					"name": "GetAllPartyToId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/PartyAccount/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"PartyAccount",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllParty",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/PartyAccount/",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"PartyAccount",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllPartyAccountDocToId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/PartyAccountDoc/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"PartyAccountDoc",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllPartyAccountDoc",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/PartyAccountDoc/",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"PartyAccountDoc",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GoodSaleParam",
+			"item": [
+				{
+					"name": "GoodSaleParam Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/goodSaleParam",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"goodSaleParam"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GoodSaleParam Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/goodSaleParam",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"goodSaleParam"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put GoodSaleParam",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \n            \"price\": \"120\"\n            \n    \n}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/goodSaleParam/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"goodSaleParam",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hospital",
+			"item": [
+				{
+					"name": "Update Hospital",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"place\": \"13\",\n\"description\": \"rest upd\",\n}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/hospital/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"hospital",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET one HospitalBlock",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/HospitalBlock/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"HospitalBlock",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all hospital",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/hospital",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"hospital"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all HospitalBlock",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/HospitalBlock",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"HospitalBlock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET one hospital",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/hospital/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"hospital",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invoice",
+			"item": [
+				{
+					"name": "Invoice Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/invoice/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"invoice",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invoice Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/invoice",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"invoice"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{'property':'client_id', 'value':'14'}]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "InvoiceDocument",
+			"item": [
+				{
+					"name": "InvoiceDocument Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/invoiceDocument/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"invoiceDocument",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InvoiceDocument Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/invoiceDocument",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"invoiceDocument"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{'property':'client_id', 'value':'14'}]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Medical Card",
+			"item": [
+				{
+					"name": "Medical Card Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/MedicalCards/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"MedicalCards",
+								"{{ID}}"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{'property':'patient_id', 'value':'1'}]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Medical Card Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/MedicalCards",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"MedicalCards"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{'property':'patient_id', 'value':'1'}]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Medical Card Get Text Templates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/MedicalCards/MedcardsTextTemplates",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"MedicalCards",
+								"MedcardsTextTemplates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Medical Card Get By Pet (Filter)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/MedicalCards?filter=[{'property':'patient_id', 'value':'6'}]",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"MedicalCards"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{'property':'patient_id', 'value':'6'}]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Medical Card Put",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"patient_id\":\"1\",\n   \"doctor_id\":\"1\",\n   \"clinic_id\":\"1\",\n   \"date_create\":\"2019-07-06 14:00:01\",\n   \"admission_type\":\"7\",\n   \"description\":\"10245\",\n   \"recomendation\":\"upd recomendation\",\n   \"meet_result_id\":0,\n   \"weight\":0.00,\n   \"temperature\":0.00,\n   \"diagnos\":\"[{\"id\":\"32\",\"type\":1},{\"id\":\"11\",\"type\":1}]\"\n}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/MedicalCards/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"MedicalCards",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Medical Card Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"patient_id\":\"1\",\n   \"doctor_id\":\"1\",\n   \"clinic_id\":\"1\",\n   \"date_create\":\"2019-07-06 14:00:01\",\n   \"admission_type\":\"7\",\n   \"description\":\"test description\",\n   \"recomendation\":\"test recomendation\",\n   \"meet_result_id\":0,\n   \"weight\":0.00,\n   \"temperature\":0.00,\n   \"diagnos\":\"[{\"id\":\"32\",\"type\":1},{\"id\":\"11\",\"type\":1}]\"\n}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/MedicalCards",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"MedicalCards"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Medical Card By Client",
+			"item": [
+				{
+					"name": "Medical Card Get By Client (Without parameters returns first 10)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/MedicalCards/MedicalcardsDataByClient?client_id={{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"MedicalCards",
+								"MedicalcardsDataByClient"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{ID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Medical Card Get By Client (With Limit & Offset. Can be used separately)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/MedicalCards/MedicalcardsDataByClient?client_id={{ID}}&offset=2&limit=11",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"MedicalCards",
+								"MedicalcardsDataByClient"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{ID}}"
+								},
+								{
+									"key": "offset",
+									"value": "2"
+								},
+								{
+									"key": "limit",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Medical Card / Diagnose",
+			"item": [
+				{
+					"name": "Get All Diagnoses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/MedicalCards/AllDiagnoses",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"MedicalCards",
+								"AllDiagnoses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Medical Card / Vaccination",
+			"item": [
+				{
+					"name": "Post Vaccination",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"medcard_id\":1,\n    \"clinic_id\":1,\n    \"pet_id\":1,\n    \"doctor_id\":1,\n    \"vaccine_id\":\"6_10\",\n    \"vaccine_type\":2,\n    \"doza_value\":1,\n    \"vaccine_date\":\"2020-07-03 14:57\",\n    \"delete_vaccine_nextdates\":0,\n    \"plane_next_visit_by_repead_vaccine_date\":0,\n    \"action\":\"add\",\n    \"vaccine_description\":\"\", \n    \"pet_weight\":0,\n    \"pet_temperature\":0,\n    \"next_date\":\"2020-07-08\",\n    \"next_visit_time\":\"15:00\"\n}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/MedicalCards/AddVaccination?pet_id={{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"MedicalCards",
+								"AddVaccination"
+							],
+							"query": [
+								{
+									"key": "pet_id",
+									"value": "{{ID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vaccinations By Pet",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/MedicalCards/Vaccinations?pet_id={{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"MedicalCards",
+								"Vaccinations"
+							],
+							"query": [
+								{
+									"key": "pet_id",
+									"value": "{{ID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "Get Payments All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/payment/",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"payment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payments By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/payment/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"payment",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payments By Invoice ID (Filter)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/payment/?filter=[{'property':'invoice_id', 'value':'{{ID}}'}]",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"payment",
+								""
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{'property':'invoice_id', 'value':'{{ID}}'}]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Closing Of Invoice All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/closingOfInvoices",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"closingOfInvoices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Closing Of Invoice By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/closingOfInvoices/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"closingOfInvoices",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pet",
+			"item": [
+				{
+					"name": "Get Pet By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/pet/74",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"pet",
+								"74"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Pets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/pet",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"pet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Pets By Owner Id And Not Deleted",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/pet/?filter=[{'property':'owner_id', 'value':'{{ID}}'},{'property':'status', 'value':'deleted', 'operator':'!='}]",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"pet",
+								""
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{'property':'owner_id', 'value':'{{ID}}'},{'property':'status', 'value':'deleted', 'operator':'!='}]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Pet",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"owner_id\": \"1\",\n    \"breed_id\": \"1\",\n    \"type_id\": \"1\",\n    \"alias\": \"Тест\"\n}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/pet",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"pet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Pet",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"owner_id\": \"1\",\n    \"breed_id\": \"1\",\n    \"type_id\": \"1\",\n    \"alias\": \"Тест\"\n}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/pet/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"pet",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Pet",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/pet/122",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"pet",
+								"122"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PetType",
+			"item": [
+				{
+					"name": "Get PetType By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/petType/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"petType",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All PetTypes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/petType",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"petType"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Properties",
+			"item": [
+				{
+					"name": "Get All Properties",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/properties",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"properties"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Properties By Filter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/properties",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"properties"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "GetURLReportResult",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/report/reportFile?file_id={{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"report",
+								"reportFile"
+							],
+							"query": [
+								{
+									"key": "file_id",
+									"value": "{{ID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StartReport",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/report/StartReport?report_id={{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"report",
+								"StartReport"
+							],
+							"query": [
+								{
+									"key": "report_id",
+									"value": "{{ID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StartReportWithFilter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/report/StartReport?report_id={{ID}}& filter={\"1\":\"2020-01-01\",\"2\":\"2020-07-01\"}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"report",
+								"StartReport"
+							],
+							"query": [
+								{
+									"key": "report_id",
+									"value": "{{ID}}"
+								},
+								{
+									"key": " filter",
+									"value": "{\"1\":\"2020-01-01\",\"2\":\"2020-07-01\"}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Get Role By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/role/2",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"role",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Roles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/role",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"role"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Store",
+			"item": [
+				{
+					"name": "GetQuantityGood",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/stores/RestOfGoodInWarehouse/?clinic_id=1&good_id={{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"stores",
+								"RestOfGoodInWarehouse",
+								""
+							],
+							"query": [
+								{
+									"key": "clinic_id",
+									"value": "1"
+								},
+								{
+									"key": "good_id",
+									"value": "{{ID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetStoreDocumentOperationToId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/StoreDocumentOperation/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"StoreDocumentOperation",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetStoreDocumentsToId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/StoreDocument/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"StoreDocument",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllStoreDocuments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/StoreDocument/",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"StoreDocument",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Streets",
+			"item": [
+				{
+					"name": "Get All Streets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/street",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"street"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Street By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/street",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"street"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Street",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\": \"REST Street(UPD)\"}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/street/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"street",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Street",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\": \"REST Street\", \"city_id\": \"252\"}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/street/",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"street",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Street",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/street/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"street",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Suppliers",
+			"item": [
+				{
+					"name": "GetSuppliersToId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/Suppliers/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"Suppliers",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllSuppliers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/Suppliers/",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"Suppliers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateSupplier",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"contact_person\": \"John Doe\",\n   \"company_name\": \"Test Company\",\n   \"city_id\": \"145\",\n   \"address\": \"\",\n   \"phone\": \"\",\n   \"mail\": \"\",\n   \"inn\": \"\",\n   \"bank_ik\": \"\",\n   \"bank_account\": \"\",\n   \"bank_account_corr\": \"\",\n   \"bank_name\": \" \",\n   \"person_type\": \"legal_person\",\n   \"view_in_modules\": \"prihod,rashod\",\n   \"status\": \"ACTIVE\",\n   \"note\": \"This is a test note\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/Suppliers/",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"Suppliers",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Unit",
+			"item": [
+				{
+					"name": "Get Unit By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/unit/1",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"unit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Units",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/unit",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"unit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete unit",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/Unit/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"Unit",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post unit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \n            \"title\": \"Test87\"\n            \n    \n}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/Unit",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"Unit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put unit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \n            \"title\": \"Test88\"\n            \n    \n}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/Unit/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"Unit",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/user/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"user",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/user",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Get By FIrst And Last Names",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/user?filter=[{'property':'first_name', 'value':'Владимир'},{'property':'last_name', 'value':'Романичев'}] ",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"user"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{'property':'first_name', 'value':'Владимир'},{'property':'last_name', 'value':'Романичев'}] "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User editing",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"last_name\": \"Rest UPD\"}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/user/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"user",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Positons",
+			"item": [
+				{
+					"name": "Get All UserPositions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/userPosition",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"userPosition"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get UserPosition By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/userPosition/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"userPosition",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update UserPosition",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"title\": \"restPosition(upd)\"\n}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/userPosition/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"userPosition",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post UserPosition",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"title\": \"restPosition\"\n}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/userPosition",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"userPosition"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete UserPosition",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"title\": \"restPosition(upd)\"\n}"
+						},
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/userPosition/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"userPosition",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth #2 (by Service Name and Key)",
+			"item": [
+				{
+					"name": "Usage example",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-SERVICE-NAME",
+								"value": "!!!!!!!!------your_service_name",
+								"type": "text"
+							},
+							{
+								"key": "X-SERVICE-REST-API-KEY",
+								"value": "!!!!!!!!------your_service_key"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/user",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth #3 (by User Login & Password -> Token)",
+			"item": [
+				{
+					"name": "Get Token (by User Login & Password)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "login",
+									"value": "!!!!!!!!------user_login",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "!!!!!!!!------user_pass",
+									"type": "text"
+								},
+								{
+									"key": "app_name",
+									"value": "!!!!!!!!------your_service_name",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Domain URL}}/token_auth.php",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"token_auth.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Use Token",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-APP-NAME",
+								"value": "!!!!!!!!------same_name_as_in_get_token_request",
+								"type": "text"
+							},
+							{
+								"key": "X-USER-TOKEN",
+								"value": "!!!!!!!!------254958213cf0287606fec50b7072f3f39b744b04",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/user",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Link to Owner Cabinet (VM-Link)",
+			"item": [
+				{
+					"name": "Get By ID",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/VmLink/personalAccountLinkByClientId/1",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"VmLink",
+								"personalAccountLinkByClientId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By ID (With Auth #2)",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-SERVICE-NAME",
+								"value": "!!!!!!!!------your_service_name"
+							},
+							{
+								"key": "X-SERVICE-REST-API-KEY",
+								"value": "!!!!!!!!------your_service_key",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/VmLink/personalAccountLinkByClientId/1",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"VmLink",
+								"personalAccountLinkByClientId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Phone",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/VmLink/personalAccountLinkByPhone/3322122",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"VmLink",
+								"personalAccountLinkByPhone",
+								"3322122"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FiscalRegistrator",
+			"item": [
+				{
+					"name": "Get All Fiscal Tax System",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/fiscalTaxSystems",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"fiscalTaxSystems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Fiscal Tax System By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/fiscalTaxSystems/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"fiscalTaxSystems",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Fiscal Tax System By ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-REST-API-KEY",
+										"value": "{{API Key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://evotor2.vetmanager2.ru/fiscal_register.php?api=6skyxg2ujjft4dmhhzw2lqrsytwuzdfe&action=get_rabbit_info&extended=1",
+									"protocol": "https",
+									"host": [
+										"evotor2",
+										"vetmanager2",
+										"ru"
+									],
+									"path": [
+										"fiscal_register.php"
+									],
+									"query": [
+										{
+											"key": "api",
+											"value": "6skyxg2ujjft4dmhhzw2lqrsytwuzdfe"
+										},
+										{
+											"key": "action",
+											"value": "get_rabbit_info"
+										},
+										{
+											"key": "extended",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 22 Apr 2025 10:41:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "PHPSESSID=mhvtjhopseomr57r2u8db42huq; path=/"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "[{\"exchange\":\"vm.gen.2ef126cd594dc05195b865c6975b28d0:1\",\"stompUrl\":\"wss:\\/\\/rabbitmqsrv.vetmanager2.ru\\/ws\",\"rabbitServer\":\"rabbitmqsrv.vetmanager2.ru:31338\",\"user\":\"rabbitmq_new\",\"pass\":\"A9xEF90RwuH2gMvLiWwhMMYSWyeFgKM7\",\"vhost\":\"\\/vm\",\"port\":\"\"},{\"exchange\":\"vm.gen.2ef126cd594dc05195b865c6975b28d0\",\"stompUrl\":\"wss:\\/\\/rabbitmqsrv.vetmanager2.ru\\/ws\",\"rabbitServer\":\"rabbitmqsrv.vetmanager2.ru:31338\",\"user\":\"rabbitmq_new\",\"pass\":\"A9xEF90RwuH2gMvLiWwhMMYSWyeFgKM7\",\"vhost\":\"\\/vm\",\"port\":\"\"}]"
+						}
+					]
+				},
+				{
+					"name": "Get All Fiscal Register Data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/fiscalRegisterData",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"fiscalRegisterData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Fiscal Register Data By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-REST-API-KEY",
+								"value": "{{API Key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Domain URL}}/rest/api/fiscalRegisterData/{{ID}}",
+							"host": [
+								"{{Domain URL}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"fiscalRegisterData",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "InvoiceDocument Get All WithFilter",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-REST-API-KEY",
+						"value": "{{API Key}}"
+					}
+				],
+				"url": {
+					"raw": "{{Domain URL}}/rest/api/invoiceDocument?filter=[{'property':'document_id', 'value':'218'}]",
+					"host": [
+						"{{Domain URL}}"
+					],
+					"path": [
+						"rest",
+						"api",
+						"invoiceDocument"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "[{'property':'document_id', 'value':'218'}]"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "Domain URL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
