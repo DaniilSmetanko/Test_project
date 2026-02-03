@@ -1,0 +1,89 @@
+{\rtf1\ansi\ansicpg1251\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Oblique;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww22140\viewh12480\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\i\fs24 \cf0 \ul \ulc0 \uc0\u1044 \u1077 \u1083 \u1072 \u1083  \u1090 \u1091 \u1090  - https://onecompiler.com/mysql/44b29hdcm
+\f1\i0 \ulnone \
+\
+\
+CREATE TABLE Clinic (\
+    clinic_id INT PRIMARY KEY AUTO_INCREMENT,\
+    name_clinic VARCHAR(100) NOT NULL,\
+    city VARCHAR(100) NOT NULL,\
+    street VARCHAR(100)\
+);\
+\
+\
+CREATE TABLE Client (\
+    client_id INT PRIMARY KEY AUTO_INCREMENT,\
+    first_name VARCHAR(50) NOT NULL,\
+    last_name VARCHAR(50),\
+    email VARCHAR(100) UNIQUE,\
+    number_mobile VARCHAR(15) NOT NULL,\
+    clinic_id INT\
+);\
+\
+CREATE TABLE Pet (\
+    pet_id INT PRIMARY KEY AUTO_INCREMENT,\
+    pet_title VARCHAR(50) NOT NULL,\
+    client_id INT\
+);\
+\
+INSERT INTO Clinic (clinic_id, name_clinic, city, street) VALUES \
+(1, '\uc0\u1042 \u1088 \u1072 \u1095 \u1077 \u1074 \u1072 \u1090 \u1077 \u1083 \u1100 ', '\u1041 \u1077 \u1083 \u1099 \u1081  \u1089 \u1072 \u1076 ', '\u1059  \u1088 \u1072 \u1089 \u1087 \u1091 \u1090 \u1100 \u1103 '),\
+(2, '\uc0\u1062 \u1077 \u1083 \u1080 \u1090 \u1077 \u1083 \u1100 ', '\u1053 \u1086 \u1074 \u1080 \u1075 \u1088 \u1072 \u1076 ', '\u1055 \u1088 \u1080 \u1089 \u1090 \u1072 \u1085 \u1100 '),\
+(3, '\uc0\u1044 \u1086 \u1082 \u1090 \u1086 \u1088 \u1044 \u1086 \u1082 ', '\u1057 \u1082 \u1077 \u1083 \u1077 \u1075 \u1077 ', '\u1059  \u1060 \u1088 \u1077 \u1080 '),\
+(4, '\uc0\u1046 \u1080 \u1074 \u1086 \u1083 \u1102 \u1073 ', '\u1064 \u1072 \u1093 \u1090 \u1099 ', '\u1057 \u1077 \u1085 \u1072 \u1103 ');\
+\
+INSERT INTO Client (client_id, first_name, last_name, email, number_mobile, clinic_id) VALUES \
+(1, '\uc0\u1043 \u1077 \u1088 \u1072 \u1083 \u1100 \u1090 ', '\u1048 \u1079  \u1056 \u1080 \u1074 \u1080 \u1080 ', 'geralt@bk.ru', '79189996595', 1),\
+(2, '\uc0\u1051 \u1072 \u1084 \u1073 \u1077 \u1088 \u1090 ', '\u1048 \u1079  \u1062 \u1080 \u1085 \u1090 \u1088 \u1099 ', 'lambert@bk.ru', '79189656585', 3),\
+(3, '\uc0\u1042 \u1077 \u1089 \u1080 \u1084 \u1080 \u1088 ', '', 'Vesimir@gmail.com', '79956482315', 2),\
+(4, '\uc0\u1069 \u1089 \u1082 \u1077 \u1083 \u1100 ', '', 'eskel11@mail.ru', '78986442132', 4);\
+\
+\
+INSERT INTO Pet (pet_id, pet_title, client_id) VALUES\
+(1, '\uc0\u1050 \u1086 \u1096 \u1082 \u1080 ', 3),\
+(2, '\uc0\u1057 \u1086 \u1073 \u1072 \u1082 \u1080 ', 2),\
+(3, '\uc0\u1051 \u1086 \u1096 \u1072 \u1076 \u1100 ', 1),\
+(4, '\uc0\u1055 \u1090 \u1080 \u1094 \u1099 ', 4);\
+\
+\
+ALTER TABLE Client \
+ADD FOREIGN KEY (clinic_id) REFERENCES Clinic(clinic_id);\
+\
+ALTER TABLE Pet \
+ADD FOREIGN KEY (client_id) REFERENCES Client(client_id);\
+\
+-- index\
+CREATE INDEX idx_query_performance ON Client(clinic_id, client_id);\
+-- View\
+CREATE VIEW Clinic_Analysis_View AS\
+SELECT \
+    cl.clinic_id,\
+    cl.name_clinic,\
+    cl.city,\
+    --\uc0\u1055 \u1086 \u1076 \u1079 \u1072 \u1087 \u1088 \u1086 \u1089  \u1074  Select\
+    (SELECT COUNT(*) FROM Client c WHERE c.clinic_id = cl.clinic_id) as client_count,\
+    --\uc0\u1055 \u1086 \u1076 \u1079 \u1072 \u1087 \u1088 \u1086 \u1089  \u1089  join \u1074 \u1085 \u1091 \u1090 \u1088 \u1080 \
+    (SELECT COUNT(DISTINCT p.client_id) \
+     FROM Client c \
+     JOIN Pet p ON c.client_id = p.client_id \
+     WHERE c.clinic_id = cl.clinic_id) as clients_with_pets\
+FROM Clinic cl;\
+SELECT \
+    cav.*,\
+    (SELECT GROUP_CONCAT(p.pet_title SEPARATOR ', ')\
+     FROM Client c\
+     JOIN Pet p ON c.client_id = p.client_id\
+     WHERE c.clinic_id = cav.clinic_id) as available_pet_types\
+FROM Clinic_Analysis_View cav\
+ORDER BY cav.client_count DESC;\
+\
+\
+\
+\
+}
