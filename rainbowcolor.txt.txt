@@ -2,3 +2,4 @@ Red=Красный
 Blue=Синий
 Green=Зеленный
 Blacke=Черный
+Orange=Ораньжевый
