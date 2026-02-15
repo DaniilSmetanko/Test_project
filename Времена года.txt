@@ -1,1 +1,2 @@
 winter=зима
+summer=лето
