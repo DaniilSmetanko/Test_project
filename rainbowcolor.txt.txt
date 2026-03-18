@@ -3,3 +3,4 @@ Blue=Синий
 Green=Зеленный
 Blacke=Черный
 Желтый=Yellow
+зеленный=green
