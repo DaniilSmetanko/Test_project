@@ -1,4 +1,6 @@
 Red=Красный
 Blue=Синий
 Green=Зеленный
-Orange=Ораньжевый
+Blacke=Черный
+Желтый=Yellow
+зеленный=green
