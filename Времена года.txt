@@ -1,0 +1,4 @@
+winter=зима
+summer=лето
+spring=осень
+Весна
